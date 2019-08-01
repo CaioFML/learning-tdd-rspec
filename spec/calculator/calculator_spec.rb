@@ -1,6 +1,6 @@
 require 'calculator'
 
-describe Calculator do
+RSpec.describe Calculator, "sobre a calculadora" do
   context '#sum' do
     it 'with positive numbers' do
       result = subject.sum(5, 7)
