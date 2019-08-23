@@ -4,8 +4,10 @@ FactoryBot.define do
       upcased { false }
     end
 
+    sequence(:email, 33) { |n| "meu_email-#{n}@email.com" }
+
     name { Faker::Name.name }
-    email { Faker::Internet.email }
+    # email { Faker::Internet.email }
 
     trait :male do
       gender { 'M' }
