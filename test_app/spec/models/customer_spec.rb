@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Customer, type: :model do
-  let(:customer) { create(:customer) }
+  let(:customer) { create(:customer, name: "Caio") }
 
   it '#full_name' do
-    expect(customer.full_name).to start_with 'Sr. '
+    expect(customer.full_name).to eq 'Sr. Caio'
   end
 
-  it { expect { create(:customer) }.to change { Customer.all.size}.by 1 }
+  it { expect { create(:user) }.to change { Customer.all.size }.by 1 }
 end
