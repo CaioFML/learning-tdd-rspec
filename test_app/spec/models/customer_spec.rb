@@ -23,5 +23,17 @@ RSpec.describe Customer, type: :model do
     expect(customer.name.upcase).to eq(customer.name)
   end
 
+  it 'cliente masculino vip' do
+    customer = create(:customer_male_vip)
+    expect(customer.gender).to eq 'M'
+    expect(customer.vip).to be_truthy
+  end
+
+  it 'cliente feminino default' do
+    customer = create(:customer_female_default)
+    expect(customer.gender).to eq 'F'
+    expect(customer.vip).to be_falsy
+  end
+
   it { expect { create(:user) }.to change { Customer.all.size }.by 1 }
 end
