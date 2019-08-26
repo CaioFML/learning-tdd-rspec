@@ -8,8 +8,8 @@ RSpec.describe Order, type: :model do
   end
 
   it 'Tem 3 pedidos - create_list' do
-    orders = create_list(:order, 3) #Vem um array de objetos criados
-    expect(orders.count).to eq 3
+    orders = create_pair(:order) #Vem um array de objetos criados
+    expect(orders.count).to eq 2
   end
 
   it 'has_many association' do
