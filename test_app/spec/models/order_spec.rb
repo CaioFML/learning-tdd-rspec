@@ -7,9 +7,13 @@ RSpec.describe Order, type: :model do
     expect(order.customer).to be_kind_of Customer
   end
 
-  it 'Tem 3 pedidos' do
+  it 'Tem 3 pedidos - create_list' do
     orders = create_list(:order, 3) #Vem um array de objetos criados
-    puts orders.inspect
     expect(orders.count).to eq 3
+  end
+
+  it 'has_many association' do
+    customer = create(:customer, :with_orders, qtt_orders: 5)
+    expect(customer.orders.count).to eq 5
   end
 end
