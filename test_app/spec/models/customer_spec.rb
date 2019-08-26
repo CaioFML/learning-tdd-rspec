@@ -5,7 +5,7 @@ RSpec.describe Customer, type: :model do
 
   it '#full_name' do
     expect(customer.full_name).to eq 'Sr. Caio'
-    expect(customer.email).to eq 'meu_email-33@email.com'
+    expect(customer.email).to eq 'meu_email-44@email.com'
   end
 
   it '#vip - herança factory' do
