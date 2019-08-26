@@ -5,7 +5,7 @@ RSpec.describe Customer, type: :model do
 
   it '#full_name' do
     expect(customer.full_name).to eq 'Sr. Caio'
-    expect(customer.email).to eq 'meu_email-44@email.com'
+    expect(customer.email).to eq 'meu_email-33@email.com'
   end
 
   it '#vip - herança factory' do
@@ -34,6 +34,16 @@ RSpec.describe Customer, type: :model do
     customer = create(:customer_female_default)
     expect(customer.gender).to eq 'F'
     expect(customer.vip).to be_falsy
+  end
+
+  it 'travel_to' do
+    travel_to Time.zone.local(2004, 11, 24, 01, 04, 44, +0000) do
+      @customer2 = create(:customer_vip)
+    end
+
+    puts @customer2.created_at
+    puts Time.now
+    expect(@customer2.created_at).to eq(Time.new(2004, 11, 24, 01, 04, 44, +0000))
   end
 
   it { expect { create(:user) }.to change { Customer.all.size }.by 1 }
