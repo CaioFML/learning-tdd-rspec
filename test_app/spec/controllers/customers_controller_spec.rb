@@ -30,6 +30,16 @@ RSpec.describe CustomersController, type: :controller do
         sign_in @member
       end
 
+      it 'content-type JSON' do
+        get :show, format: :json, params: { id: @customer.id }
+        expect(response.content_type).to eq('application/json')
+      end
+
+      it 'content-type HTML' do
+        get :show, format: :html, params: { id: @customer.id }
+        expect(response.content_type).to eq('text/html')
+      end
+
       it 'Flash Notice' do
         post :create, params: { customer: @customer_params }
         expect(flash[:notice]).to match(/successfully created/)
