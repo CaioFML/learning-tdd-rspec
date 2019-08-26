@@ -5,7 +5,7 @@ FactoryBot.define do
       qtt_orders { 3 }
     end
 
-    sequence(:email, 33) { |n| "meu_email-#{n}@email.com" }
+    sequence(:email) { |n| "meu_email-#{n}@email.com" }
 
     name { Faker::Name.name }
     address { Faker::Address.street_address }
