@@ -6,20 +6,20 @@ RSpec.feature "Customers", type: :feature do
     expect(page).to have_link 'Cadastro de clientes'
   end
 
-  scenario "verifies link to new client" do
+  scenario "verifies link to new customer" do
     visit root_path
     click_on 'Cadastro de clientes'
     expect(page).to have_content 'Listando clientes'
     expect(page).to have_link 'Novo cliente'
   end
 
-  scenario "verifies form of new client" do
+  scenario "verifies form of new customer" do
     visit customers_path
     click_on('Novo cliente')
     expect(page).to have_content 'Novo cliente'
   end
 
-  scenario "Create a valid client" do
+  scenario "Create a valid customer" do
     visit new_customer_path
     customer_name = Faker::Name.name
 
@@ -32,5 +32,11 @@ RSpec.feature "Customers", type: :feature do
 
     expect(page).to have_content 'Cliente cadastrado com sucesso!'
     expect(Customer.last.name).to eq customer_name
+  end
+
+  scenario 'Dont create a invalid customer' do
+    visit new_customer_path
+    click_on 'Criar cliente'
+    expect(page).to have_content 'não pode ficar em branco'
   end
 end
