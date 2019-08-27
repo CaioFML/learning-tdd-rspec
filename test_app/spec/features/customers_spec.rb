@@ -34,3 +34,5 @@ RSpec.feature "Customers", type: :feature, js: true do
     expect(page).to have_content 'Customer was successfully created.'
   end
 end
+
+# CAPYBARA CHEATSHEET - Dicas de matchers
