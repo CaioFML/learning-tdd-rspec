@@ -5,3 +5,11 @@
 <h1>Listando clientes</h1>
 
 <%= link_to "Novo cliente", new_customer_path %>
+
+<ul>
+  <% @customers.each do |customer| %>
+    <li><%= customer.name %></li>
+    <li><%= customer.email %></li>
+    <li><%= customer.phone %></li>
+  <% end %>
+</ul>
