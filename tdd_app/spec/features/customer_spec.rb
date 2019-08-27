@@ -28,6 +28,7 @@ RSpec.feature "Customers", type: :feature do
     fill_in('Telefone', with: Faker::PhoneNumber.phone_number)
     attach_file('Foto do perfil', "#{Rails.root}/spec/fixtures/avatar.png")
     choose(option: %w[S N].sample)
+    click_on 'Criar cliente'
 
     expect(page).to have_content 'Cliente cadastrado com sucesso!'
     expect(Customer.last.name).to eq customer_name
