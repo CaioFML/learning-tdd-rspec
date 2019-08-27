@@ -23,6 +23,8 @@ RSpec.describe "Customers", type: :request do
     end
 
     it "show - JSON 200 OK" do
+      member = create(:member)
+      login_as(member, scope: :member)
       get '/customers/37.json'
       expect(response.body).to include_json(
           id: /\d/,
@@ -32,6 +34,8 @@ RSpec.describe "Customers", type: :request do
     end
 
     it "show - RSPEC PURO + JSON 200 OK" do
+      member = create(:member)
+      login_as(member, scope: :member)
       get '/customers/37.json'
       response_body = JSON.parse(response.body)
       expect(response_body.fetch("id")).to eq 37
