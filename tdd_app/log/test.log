@@ -7430,3 +7430,854 @@ Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:32:08 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 125ms (Views: 122.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:32:08 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:32:08 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:32:08 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.7ms)
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:32:08 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (103.3ms)
+Completed 200 OK in 109ms (Views: 104.0ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:32:08 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started POST "/customers" for 127.0.0.1 at 2019-08-28 09:32:08 -0300
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"Silas Gentil Filho", "email"=>"willenaromaguera@schinner.biz", "phone"=>"(17) 8470-6817", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0000560721073ae0 @tempfile=#<Tempfile:/tmp/RackMultipart20190828-23327-63jyap.png>, @original_filename="avatar.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"customer[avatar]\"; filename=\"avatar.png\"\r\nContent-Type: image/png\r\nContent-Length: 50117\r\n">, "smoker"=>"S"}, "commit"=>"Criar cliente"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Silas Gentil Filho"], ["email", "willenaromaguera@schinner.biz"], ["smoker", "S"], ["phone", "(17) 8470-6817"], ["avatar", "#<ActionDispatch::Http::UploadedFile:0x0000560721073ae0>"], ["created_at", "2019-08-28 12:32:08.993686"], ["updated_at", "2019-08-28 12:32:08.993686"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/customers
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:32:08 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/customers" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"", "email"=>"", "phone"=>""}, "commit"=>"Criar cliente"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (1.0ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Djalma Souza"], ["email", "michealruel@weberdamore.net"], ["smoker", "S"], ["phone", "(13) 0372-2100"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:32:09.017074"], ["updated_at", "2019-08-28 12:32:09.017074"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/196" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 196], ["LIMIT", 1]]
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Davi Lucca Rebouças"], ["email", "echohuels@bernhard.name"], ["smoker", "N"], ["phone", "(79) 6395-9263"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:32:09.028131"], ["updated_at", "2019-08-28 12:32:09.028131"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Gabrielly das Neves"], ["email", "kyle@goodwinschroeder.com"], ["smoker", "S"], ["phone", "(86) 5344-1790"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:32:09.029351"], ["updated_at", "2019-08-28 12:32:09.029351"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Davi Luiz Macedo"], ["email", "mariolockman@langworth.co"], ["smoker", "S"], ["phone", "(33) 4784-5214"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:32:09.043771"], ["updated_at", "2019-08-28 12:32:09.043771"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/199/edit" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"199"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+Started PATCH "/customers/199" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"Antonia Franco", "email"=>"mariolockman@langworth.co", "phone"=>"(33) 4784-5214", "smoker"=>"S"}, "commit"=>"Atualizar cliente", "id"=>"199"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Update (0.2ms)[0m  [1m[33mUPDATE "customers" SET "name" = $1, "updated_at" = $2 WHERE "customers"."id" = $3[0m  [["name", "Antonia Franco"], ["updated_at", "2019-08-28 12:32:09.057519"], ["id", 199]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/customers/199
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/customers/199" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"199"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.9ms)
+Started GET "/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+Started GET "/assets/application-71768791a19fc40b51a2a449d0c6331ebcd1d5fa4ebd536591bd261a000f0a4a.js" for 127.0.0.1 at 2019-08-28 09:32:09 -0300
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:32:15 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:32:15 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:32:57 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 152ms (Views: 149.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:32:57 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "João Pedro Ferreira Neto"], ["email", "wes@croninharris.net"], ["smoker", "S"], ["phone", "(62) 8599-5787"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.363084"], ["updated_at", "2019-08-28 12:33:16.363084"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 63ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Karla Almeida"], ["email", "shastadibbert@christiansen.biz"], ["smoker", "N"], ["phone", "(89) 8191-8266"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.432189"], ["updated_at", "2019-08-28 12:33:16.432189"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Thomas da Cruz"], ["email", "ambroseblick@kub.biz"], ["smoker", "S"], ["phone", "(89) 9980-5091"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.443052"], ["updated_at", "2019-08-28 12:33:16.443052"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (54.3ms)
+Completed 200 OK in 58ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sra. Elisa Solimões"], ["email", "ezekielhomenick@watersruecker.net"], ["smoker", "N"], ["phone", "(47) 4939-7297"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.509582"], ["updated_at", "2019-08-28 12:33:16.509582"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/customers" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"Laís Novaes", "email"=>"vickeykaulke@kemmer.co", "phone"=>"(98) 7519-8938", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00005614df867848 @tempfile=#<Tempfile:/tmp/RackMultipart20190828-24483-8m653d.png>, @original_filename="avatar.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"customer[avatar]\"; filename=\"avatar.png\"\r\nContent-Type: image/png\r\nContent-Length: 50117\r\n">, "smoker"=>"N"}, "commit"=>"Criar cliente"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Laís Novaes"], ["email", "vickeykaulke@kemmer.co"], ["smoker", "N"], ["phone", "(98) 7519-8938"], ["avatar", "#<ActionDispatch::Http::UploadedFile:0x00005614df867848>"], ["created_at", "2019-08-28 12:33:16.543042"], ["updated_at", "2019-08-28 12:33:16.543042"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/customers
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Dr. Bernardo Gomide"], ["email", "valentinbergnaum@treutel.info"], ["smoker", "S"], ["phone", "(75) 6294-6639"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.556012"], ["updated_at", "2019-08-28 12:33:16.556012"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+Started POST "/customers" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"", "email"=>"", "phone"=>""}, "commit"=>"Criar cliente"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sara Modesto"], ["email", "marilyn@mante.biz"], ["smoker", "N"], ["phone", "(44) 7394-9035"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.589351"], ["updated_at", "2019-08-28 12:33:16.589351"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pedro Henrique Quarteira"], ["email", "jeie@millerparker.com"], ["smoker", "S"], ["phone", "(16) 2459-0761"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.591917"], ["updated_at", "2019-08-28 12:33:16.591917"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ana Beatriz Galvão"], ["email", "benjamin@cole.com"], ["smoker", "N"], ["phone", "(14) 9481-4067"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.594217"], ["updated_at", "2019-08-28 12:33:16.594217"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Maya Lopes"], ["email", "kandicemaggio@prosaccostamm.io"], ["smoker", "S"], ["phone", "(75) 4799-6819"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.596378"], ["updated_at", "2019-08-28 12:33:16.596378"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Srta. Beatriz Veloso"], ["email", "pedroblick@smitham.name"], ["smoker", "S"], ["phone", "(53) 4745-2143"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.631232"], ["updated_at", "2019-08-28 12:33:16.631232"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sr. Maria Flor Hermingues"], ["email", "jewellhansen@flatley.org"], ["smoker", "N"], ["phone", "(19) 5553-2959"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.633119"], ["updated_at", "2019-08-28 12:33:16.633119"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+Started GET "/customers/211" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"211"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 211], ["LIMIT", 1]]
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Eloah Moraes Jr."], ["email", "gabrielaheidenreich@wardprosacco.biz"], ["smoker", "S"], ["phone", "(82) 7196-1939"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.642840"], ["updated_at", "2019-08-28 12:33:16.642840"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+Started GET "/customers/212/edit" for 127.0.0.1 at 2019-08-28 09:33:16 -0300
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"212"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 212], ["LIMIT", 1]]
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rebeca Paiva Jr."], ["email", "romandeckow@kohlerstracke.com"], ["smoker", "S"], ["phone", "(21) 3719-3042"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:16.657372"], ["updated_at", "2019-08-28 12:33:16.657372"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:17 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.8ms)
+Started GET "/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" for 127.0.0.1 at 2019-08-28 09:33:17 -0300
+Started GET "/assets/application-71768791a19fc40b51a2a449d0c6331ebcd1d5fa4ebd536591bd261a000f0a4a.js" for 127.0.0.1 at 2019-08-28 09:33:17 -0300
+Started DELETE "/customers/213" for 127.0.0.1 at 2019-08-28 09:33:17 -0300
+Processing by CustomersController#destroy as HTML
+  Parameters: {"id"=>"213"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 213], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Destroy (0.2ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 213]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:41345/customers
+Completed 302 Found in 2ms (ActiveRecord: 0.8ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:17 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:17 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:17 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Hugo Mendes"], ["email", "anthony@swift.name"], ["smoker", "S"], ["phone", "(84) 4528-0687"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:49.803435"], ["updated_at", "2019-08-28 12:33:49.803435"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:49 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 63ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Camila da Fronteira"], ["email", "jan@hettinger.name"], ["smoker", "S"], ["phone", "(88) 9649-7191"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:49.873073"], ["updated_at", "2019-08-28 12:33:49.873073"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:49 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:49 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Arthur Miguel Aparício"], ["email", "christian@mcclurebeatty.co"], ["smoker", "N"], ["phone", "(95) 3940-3519"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:49.888197"], ["updated_at", "2019-08-28 12:33:49.888197"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:49 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:33:49 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 56ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Djalma de Oliveira"], ["email", "dudleyabernathy@bernier.io"], ["smoker", "N"], ["phone", "(11) 8237-9159"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:49.951247"], ["updated_at", "2019-08-28 12:33:49.951247"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:33:49 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/customers" for 127.0.0.1 at 2019-08-28 09:33:49 -0300
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"Vitória Marques", "email"=>"freddy@heidenreich.name", "phone"=>"(44) 4154-5603", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0000564dc0f5e790 @tempfile=#<Tempfile:/tmp/RackMultipart20190828-25263-1mygfms.png>, @original_filename="avatar.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"customer[avatar]\"; filename=\"avatar.png\"\r\nContent-Type: image/png\r\nContent-Length: 50117\r\n">, "smoker"=>"N"}, "commit"=>"Criar cliente"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Vitória Marques"], ["email", "freddy@heidenreich.name"], ["smoker", "N"], ["phone", "(44) 4154-5603"], ["avatar", "#<ActionDispatch::Http::UploadedFile:0x0000564dc0f5e790>"], ["created_at", "2019-08-28 12:33:49.982112"], ["updated_at", "2019-08-28 12:33:49.982112"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/customers
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:49 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "João Esteves"], ["email", "minschmeler@swiftoconner.net"], ["smoker", "N"], ["phone", "(42) 7432-8130"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:49.994863"], ["updated_at", "2019-08-28 12:33:49.994863"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:33:49 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+Started POST "/customers" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"", "email"=>"", "phone"=>""}, "commit"=>"Criar cliente"}
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Alessandro Gabeira"], ["email", "thomasinablock@dibbertluettgen.name"], ["smoker", "N"], ["phone", "(98) 7243-6539"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.031594"], ["updated_at", "2019-08-28 12:33:50.031594"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Djalma Campos"], ["email", "lindsaygusikowski@roberts.biz"], ["smoker", "N"], ["phone", "(69) 0914-4980"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.033462"], ["updated_at", "2019-08-28 12:33:50.033462"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/221" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"221"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 221], ["LIMIT", 1]]
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Giovanna Corrêa"], ["email", "foreststrosin@howe.name"], ["smoker", "S"], ["phone", "(34) 3584-3016"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.042844"], ["updated_at", "2019-08-28 12:33:50.042844"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Olívia da Aldeia Neto"], ["email", "zachery@grimes.co"], ["smoker", "S"], ["phone", "(94) 1608-8540"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.044401"], ["updated_at", "2019-08-28 12:33:50.044401"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Louise Siqueira"], ["email", "andy@senger.io"], ["smoker", "S"], ["phone", "(35) 2087-0976"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.045765"], ["updated_at", "2019-08-28 12:33:50.045765"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Juliana Bulhões"], ["email", "jeantromp@bernhard.org"], ["smoker", "N"], ["phone", "(91) 7336-2069"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.071143"], ["updated_at", "2019-08-28 12:33:50.071143"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pedro Tobias da Silveira Jr."], ["email", "hymanritchie@ohara.biz"], ["smoker", "S"], ["phone", "(81) 4717-5335"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.072626"], ["updated_at", "2019-08-28 12:33:50.072626"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/226/edit" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"226"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 226], ["LIMIT", 1]]
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+Started PATCH "/customers/226" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"Maria Cecília Bomdia", "email"=>"hymanritchie@ohara.biz", "phone"=>"(81) 4717-5335", "smoker"=>"S"}, "commit"=>"Atualizar cliente", "id"=>"226"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 226], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Update (0.2ms)[0m  [1m[33mUPDATE "customers" SET "name" = $1, "updated_at" = $2 WHERE "customers"."id" = $3[0m  [["name", "Maria Cecília Bomdia"], ["updated_at", "2019-08-28 12:33:50.079957"], ["id", 226]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/customers/226
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/customers/226" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"226"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 226], ["LIMIT", 1]]
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Emanuel Nogueira Neto"], ["email", "sol@purdyhintz.net"], ["smoker", "N"], ["phone", "(37) 2190-6861"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.087286"], ["updated_at", "2019-08-28 12:33:50.087286"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+Started GET "/customers/227" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"227"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 227], ["LIMIT", 1]]
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Luana Costa"], ["email", "mac@ritchie.com"], ["smoker", "N"], ["phone", "(73) 3600-6456"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.096077"], ["updated_at", "2019-08-28 12:33:50.096077"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+Started GET "/customers/228/edit" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"228"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 228], ["LIMIT", 1]]
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "André da Costa"], ["email", "ima@casper.info"], ["smoker", "N"], ["phone", "(33) 1951-8021"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:50.111574"], ["updated_at", "2019-08-28 12:33:50.111574"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.9ms)
+Started GET "/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Started GET "/assets/application-71768791a19fc40b51a2a449d0c6331ebcd1d5fa4ebd536591bd261a000f0a4a.js" for 127.0.0.1 at 2019-08-28 09:33:50 -0300
+Started DELETE "/customers/229" for 127.0.0.1 at 2019-08-28 09:33:51 -0300
+Processing by CustomersController#destroy as HTML
+  Parameters: {"id"=>"229"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 229], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Destroy (0.2ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 229]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:35101/customers
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:51 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:51 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:51 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Arthur Gabriel Regueira"], ["email", "tinishahickle@blandakuphal.net"], ["smoker", "S"], ["phone", "(82) 7231-3454"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.032136"], ["updated_at", "2019-08-28 12:33:58.032136"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 63ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fabrício Braga"], ["email", "marlinhudson@emmerichlangosh.co"], ["smoker", "S"], ["phone", "(31) 0136-0634"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.102572"], ["updated_at", "2019-08-28 12:33:58.102572"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Dra. André Longuinho"], ["email", "paulcrona@haag.net"], ["smoker", "S"], ["phone", "(54) 3986-3093"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.112727"], ["updated_at", "2019-08-28 12:33:58.112727"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 52ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sophie da Luz"], ["email", "dino@batz.name"], ["smoker", "S"], ["phone", "(17) 2185-4392"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.179232"], ["updated_at", "2019-08-28 12:33:58.179232"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/customers" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"Yasmin Moreira", "email"=>"albertobrakus@lebsack.com", "phone"=>"(32) 1967-1891", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x000055de34b97478 @tempfile=#<Tempfile:/tmp/RackMultipart20190828-25625-skgyz6.png>, @original_filename="avatar.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"customer[avatar]\"; filename=\"avatar.png\"\r\nContent-Type: image/png\r\nContent-Length: 50117\r\n">, "smoker"=>"S"}, "commit"=>"Criar cliente"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Yasmin Moreira"], ["email", "albertobrakus@lebsack.com"], ["smoker", "S"], ["phone", "(32) 1967-1891"], ["avatar", "#<ActionDispatch::Http::UploadedFile:0x000055de34b97478>"], ["created_at", "2019-08-28 12:33:58.210658"], ["updated_at", "2019-08-28 12:33:58.210658"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/customers
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Deneval da Fontoura"], ["email", "hortensiamurazik@hermiston.io"], ["smoker", "N"], ["phone", "(21) 9695-0756"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.222654"], ["updated_at", "2019-08-28 12:33:58.222654"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/new" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+Started POST "/customers" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"", "email"=>"", "phone"=>""}, "commit"=>"Criar cliente"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sra. Lucas Gabriel Novaes"], ["email", "tabathaullrich@smithamdurgan.io"], ["smoker", "S"], ["phone", "(11) 9276-4787"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.258724"], ["updated_at", "2019-08-28 12:33:58.258724"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/236" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"236"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 236], ["LIMIT", 1]]
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Maria Flor Marques"], ["email", "abram@hegmann.co"], ["smoker", "S"], ["phone", "(86) 3662-0921"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.274843"], ["updated_at", "2019-08-28 12:33:58.274843"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sophie Madeira Jr."], ["email", "gabriel@ledner.com"], ["smoker", "S"], ["phone", "(54) 8425-7382"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.276583"], ["updated_at", "2019-08-28 12:33:58.276583"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Erick da Cruz"], ["email", "randolph@keelingzboncak.net"], ["smoker", "N"], ["phone", "(84) 3606-2379"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.279367"], ["updated_at", "2019-08-28 12:33:58.279367"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ian da Fronteira"], ["email", "careygreen@lubowitz.name"], ["smoker", "S"], ["phone", "(75) 4014-1800"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.304289"], ["updated_at", "2019-08-28 12:33:58.304289"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers/240/edit" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"240"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 240], ["LIMIT", 1]]
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+Started PATCH "/customers/240" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "customer"=>{"name"=>"Talita Godinho", "email"=>"careygreen@lubowitz.name", "phone"=>"(75) 4014-1800", "smoker"=>"S"}, "commit"=>"Atualizar cliente", "id"=>"240"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 240], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Update (0.8ms)[0m  [1m[33mUPDATE "customers" SET "name" = $1, "updated_at" = $2 WHERE "customers"."id" = $3[0m  [["name", "Talita Godinho"], ["updated_at", "2019-08-28 12:33:58.313277"], ["id", 240]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/customers/240
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+Started GET "/customers/240" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"240"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 240], ["LIMIT", 1]]
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Vinicius Dias"], ["email", "benhayes@collier.net"], ["smoker", "S"], ["phone", "(62) 3386-3865"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.323479"], ["updated_at", "2019-08-28 12:33:58.323479"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+Started GET "/customers/241" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"241"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 241], ["LIMIT", 1]]
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Kaique Roseira"], ["email", "hank@bartoletti.name"], ["smoker", "S"], ["phone", "(61) 4047-8306"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.335570"], ["updated_at", "2019-08-28 12:33:58.335570"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+Started GET "/customers/242/edit" for 127.0.0.1 at 2019-08-28 09:33:58 -0300
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"242"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 242], ["LIMIT", 1]]
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "smoker", "phone", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Clara Modesto"], ["email", "wilton@medhurst.co"], ["smoker", "N"], ["phone", "(84) 1882-1129"], ["avatar", "/home/dev/learning-tdd-rspec/tdd_app/spec/fixtures/avatar.png"], ["created_at", "2019-08-28 12:33:58.348402"], ["updated_at", "2019-08-28 12:33:58.348402"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:59 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+Started GET "/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" for 127.0.0.1 at 2019-08-28 09:33:59 -0300
+Started GET "/assets/application-71768791a19fc40b51a2a449d0c6331ebcd1d5fa4ebd536591bd261a000f0a4a.js" for 127.0.0.1 at 2019-08-28 09:33:59 -0300
+Started DELETE "/customers/243" for 127.0.0.1 at 2019-08-28 09:33:59 -0300
+Processing by CustomersController#destroy as HTML
+  Parameters: {"id"=>"243"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 243], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Destroy (0.2ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 243]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:43481/customers
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+Started GET "/customers" for 127.0.0.1 at 2019-08-28 09:33:59 -0300
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  Rendered customers/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:59 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-08-28 09:33:59 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m

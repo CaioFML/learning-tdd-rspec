@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature "Customers", type: :feature do
+  before do
+    customer
+  end
+
+  let(:customer) { create(:customer) }
+
   scenario "verifies link to customer#index" do
     visit root_path
     expect(page).to have_link 'Cadastro de clientes'
@@ -41,14 +47,6 @@ RSpec.feature "Customers", type: :feature do
   end
 
   scenario "show one customer" do
-    customer = Customer.create!(
-      name: Faker::Name.name,
-      email: Faker::Internet.email,
-      phone: Faker::PhoneNumber.phone_number,
-      smoker: ['S', 'N'].sample,
-      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
-    )
-
     visit customer_path(customer.id)
     expect(page).to have_content customer.name
     expect(page).to have_content customer.email
@@ -56,21 +54,8 @@ RSpec.feature "Customers", type: :feature do
   end
 
   scenario "customer#index" do
-    customer1 = Customer.create!(
-      name: Faker::Name.name,
-      email: Faker::Internet.email,
-      phone: Faker::PhoneNumber.phone_number,
-      smoker: ['S', 'N'].sample,
-      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
-    )
-
-    customer2 = Customer.create!(
-      name: Faker::Name.name,
-      email: Faker::Internet.email,
-      phone: Faker::PhoneNumber.phone_number,
-      smoker: ['S', 'N'].sample,
-      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
-    )
+    customer1 = create(:customer)
+    customer2 = create(:customer)
 
     visit customers_path
     expect(page).to have_content(customer1.name).and have_content(customer2.name)
@@ -79,14 +64,6 @@ RSpec.feature "Customers", type: :feature do
   end
 
   scenario "updates a customer" do
-    customer = Customer.create!(
-      name: Faker::Name.name,
-      email: Faker::Internet.email,
-      phone: Faker::PhoneNumber.phone_number,
-      smoker: ['S', 'N'].sample,
-      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
-    )
-
     new_name = Faker::Name.name
     visit(edit_customer_path(customer.id))
     fill_in('Nome', with: new_name)
@@ -97,42 +74,18 @@ RSpec.feature "Customers", type: :feature do
   end
 
   scenario "Click on link show - Index" do
-    customer = Customer.create!(
-      name: Faker::Name.name,
-      email: Faker::Internet.email,
-      phone: Faker::PhoneNumber.phone_number,
-      smoker: %w[S N].sample,
-      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
-    )
-
     visit customers_path
     click_on 'Mostrar'
     expect(page).to have_content 'Mostrando cliente'
   end
 
   scenario "Click on link update - Index" do
-    customer = Customer.create!(
-      name: Faker::Name.name,
-      email: Faker::Internet.email,
-      phone: Faker::PhoneNumber.phone_number,
-      smoker: %w[S N].sample,
-      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
-    )
-
     visit customers_path
     click_on 'Editar'
     expect(page).to have_content 'Editando cliente'
   end
 
   scenario "Click on link delete - Index", js: true do
-    customer = Customer.create!(
-      name: Faker::Name.name,
-      email: Faker::Internet.email,
-      phone: Faker::PhoneNumber.phone_number,
-      smoker: %w[S N].sample,
-      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
-    )
-
     visit customers_path
     click_on 'Excluir'
     page.driver.browser.switch_to.alert.accept
