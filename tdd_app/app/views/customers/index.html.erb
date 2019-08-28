@@ -24,6 +24,7 @@
         <td><%= customer.phone %></td>
         <td><%= link_to 'Mostrar', customer_path(customer) %></td>
         <td><%= link_to 'Editar', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Excluir', customer, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
       </tr>
     <% end %>
   </tbody>

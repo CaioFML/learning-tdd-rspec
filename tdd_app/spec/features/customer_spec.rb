@@ -123,4 +123,19 @@ RSpec.feature "Customers", type: :feature do
     click_on 'Editar'
     expect(page).to have_content 'Editando cliente'
   end
+
+  scenario "Click on link delete - Index", js: true do
+    customer = Customer.create!(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      phone: Faker::PhoneNumber.phone_number,
+      smoker: %w[S N].sample,
+      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
+    )
+
+    visit customers_path
+    click_on 'Excluir'
+    page.driver.browser.switch_to.alert.accept
+    expect(page).to have_content 'Cliente excluído com sucesso!'
+  end
 end
