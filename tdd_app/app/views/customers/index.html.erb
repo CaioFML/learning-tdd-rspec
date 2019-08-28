@@ -6,10 +6,25 @@
 
 <%= link_to "Novo cliente", new_customer_path %>
 
-<ul>
-  <% @customers.each do |customer| %>
-    <li><%= customer.name %></li>
-    <li><%= customer.email %></li>
-    <li><%= customer.phone %></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <td>Nome</td>
+      <td>Email</td>
+      <td>Telefone</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.phone %></td>
+        <td><%= link_to 'Mostrar', customer_path(customer) %></td>
+        <td><%= link_to 'Editar', edit_customer_path(customer) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

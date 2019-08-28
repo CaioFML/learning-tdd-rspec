@@ -95,4 +95,32 @@ RSpec.feature "Customers", type: :feature do
     expect(page).to have_content 'Cliente atualizado com sucesso!'
     expect(page).to have_content(new_name)
   end
+
+  scenario "Click on link show - Index" do
+    customer = Customer.create!(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      phone: Faker::PhoneNumber.phone_number,
+      smoker: %w[S N].sample,
+      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
+    )
+
+    visit customers_path
+    click_on 'Mostrar'
+    expect(page).to have_content 'Mostrando cliente'
+  end
+
+  scenario "Click on link update - Index" do
+    customer = Customer.create!(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      phone: Faker::PhoneNumber.phone_number,
+      smoker: %w[S N].sample,
+      avatar: "#{Rails.root}/spec/fixtures/avatar.png"
+    )
+
+    visit customers_path
+    click_on 'Editar'
+    expect(page).to have_content 'Editando cliente'
+  end
 end
